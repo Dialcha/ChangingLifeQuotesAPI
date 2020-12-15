@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const uri = require('./config/db.config');
 const cors = require("cors");
 
-
 const app = express();
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useNewUrlParser', true);
