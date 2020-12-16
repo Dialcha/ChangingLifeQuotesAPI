@@ -1,12 +1,10 @@
-require('dotenv').config()
+require("dotenv").config();
+let mongoose = require("mongoose");
+let Schema = mongoose.Schema;
 
-module.exports = (mongoose) => {
-    const FamousQuote = mongoose.model(
-        process.env.DB_FQ_COLECTION,
-        mongoose.Schema({
-            quote: {type: String, required: True},
-            image: {type: String, required: True}
-        })
-    );
-    return FamousQuote
-}
+let famousQuote = new Schema({
+  quote: { type: String, required: true },
+  image: { type: String, required: true },
+});
+
+module.exports = mongoose.model(process.env.DB_FQ_COLECTION, famousQuote);

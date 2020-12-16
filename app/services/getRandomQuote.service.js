@@ -13,7 +13,6 @@ async function getRandomQuote() {
         },
       }
     );
-    console.log(quote.data[0]);
     return quote.data[0];
   } catch (error) {
     return error;
