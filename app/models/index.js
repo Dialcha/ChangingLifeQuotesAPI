@@ -5,6 +5,6 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
-db.famousquotes = require("./famousquote.model")(mongoose);
+db.famousQuotes = require("./famousquote.model")(mongoose);
 
 module.exports = db;

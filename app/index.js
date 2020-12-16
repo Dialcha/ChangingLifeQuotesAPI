@@ -6,10 +6,6 @@ const cors = require("cors");
 const app = express();
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useNewUrlParser', true);
-
-app.get('/', function (req, res) {
-  res.send('Hello Experimentality')
-})
  
 let corsOptions = {
   origin: "http://localhost:3000"
@@ -19,6 +15,12 @@ mongoose.connect(uri, (err, res) => {
   if (err) throw err;
   console.log("DB online")
 }); 
+
+require('./routes/famousquote.routes')(app)
+
+app.get('/', function (req, res) {
+  res.send('Hello Experimentality')
+})
 
 app.use(cors(corsOptions));
 const PORT = process.env.PORT || 8080;
