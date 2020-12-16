@@ -9,7 +9,7 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.set('useNewUrlParser', true);
  
 let corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "http://localhost:3000" // Para un front sencillo en React
 };
 
 

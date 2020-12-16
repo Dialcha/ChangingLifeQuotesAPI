@@ -3,7 +3,11 @@ module.exports = async app => {
 
     const famousQuote = require("../controllers/famousquote.controller");
     
-    router.get("/", await famousQuote.createFamousQuote);
+    router.post("/", await famousQuote.createFamousQuote);
+
+    router.get("/:id", famousQuote.findFamousQuoteById);
+
+    router.delete("/:id", famousQuote.deleteQuoteById);
 
     app.use('/api/v1/generate-changing-life-quote', router)
 }
